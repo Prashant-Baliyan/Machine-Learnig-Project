@@ -32,3 +32,24 @@ git add <filename>
 ```
 
 > Note: To ignore filename or folder from git we can add that file/folder name in .gitignore file
+
+
+To check the git status 
+```
+git status
+```
+
+To create version/commit all changes by git 
+```
+git commit -m "message"
+```
+
+To send the version/changes to github
+```
+git push origin main
+```
+
+To check remote URL
+```
+git remote -v
+```
