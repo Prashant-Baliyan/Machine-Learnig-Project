@@ -1,7 +1,6 @@
 from pytz import VERSION
-from setuptools import setup
+from setuptools import find_packages, setup
 from typing import List
-
 
 
 def get_requirements_list()-> List[str]:
@@ -12,11 +11,11 @@ def get_requirements_list()-> List[str]:
     Retuen this function is going to return a list which contain name of libraries mention inrequirement.txt file.
     """
     with open(REQUIREMENTS_FILE_NAME) as requirement_file:
-        requirement_file.readlines()
+        requirement_file.readlines().remove("-e .")
 
 #Declaring variable for setup function
 PROJECTNAME = "Housing-Predictor"
-VERSION = "0.0.1"
+VERSION = "0.0.3"
 AUTHOR = "Prashant Baliyan"
 DESCRIPTION = "First Project on Housing Prediction"
 PACKAGES = "housing"
@@ -27,6 +26,6 @@ name = PROJECTNAME,
 version= VERSION,
 author= AUTHOR,
 description= DESCRIPTION,
-packages= PACKAGES,
+packages= find_packages(),
 install_requires = get_requirements_list()
 )
